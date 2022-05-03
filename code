@@ -1,0 +1,68 @@
+var romanToInt = function(s) {
+    let total = 0
+      if (s.indexOf("CM") !== -1) {
+        total = total + 900
+        s = s.replace('CM','')
+    }
+      if (s.indexOf("CD") !== -1) {
+        total = total + 400
+        s= s.replace('CD', '')
+    }
+     if (s.indexOf("XC") !== -1) {
+        total = total + 90
+       s = s.replace("XC", " ")
+    }
+     if (s.indexOf("XL") !== -1) {
+        total = total + 40
+        s= s.replace("XL", " ")
+    }
+      if (s.indexOf("IX") !== -1) {
+        total = total + 9
+        s=s.replace("IX", " ")
+    }
+    if (s.indexOf("IV") !== -1) {
+        total = total + 4
+        s= s.replace("IV", " ")
+    }
+  
+ 
+ 
+  
+   
+    
+    
+    
+    for (i = 0; s.length > i; i++ ) {
+        
+        let position = s[i] 
+        
+        switch (position) {
+  case 'I':
+    total = total + 1
+    break;
+  case 'V':
+    total = total + 5 
+    break
+  case 'X':
+    total = total + 10
+    break;
+  case 'L':
+    total = total + 50
+    break;
+  case 'C':
+    total = total + 100
+    break;
+  case 'D':
+    total = total + 500
+    break;
+  case 'M':
+    total = total + 1000
+    break;
+    default:
+    total = total + 0;
+}
+    }
+    
+ return total
+    
+};
